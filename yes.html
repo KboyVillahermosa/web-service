@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        font-family: "Times New Roman", Times, serif;
+      }
+      .header-title {
+        margin-top: 100px;
+        justify-content: center;
+        display: flex;
+      }
+      .header {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 50vh;
+      }
+      .header-content {
+        width: 100%;
+        max-width: 400px;
+      }
+      .header-content img {
+        width: 100%;
+        max-width: 300px;
+      }
+      .drawer-body {
+        justify-content: center;
+        display: flex;
+      }
+      .drawer-content p {
+        width: 100%;
+        max-width: 800px;
+        text-align: start;
+        font-size: clamp(0.8125rem, 0.6563rem + 0.5vw, 0.9375rem);
+      }
+
+      .carousel {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        padding: 20px;
+
+      }
+
+      .carousel-slide {
+        display: none;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        display: block;
+      }
+
+      .carousel-slide.active {
+        display: block;
+      }
+
+      /* Optional: Add styles for navigation arrows */
+      .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+      }
+
+      .carousel-nav button {
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      .carousel-nav button:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
+      .carousel-slide img {
+        width: 100%;
+        max-width: 400px;
+      }
+      .text{
+        width: 100%;
+        max-width: 500px;
+        margin: 100px 50px;
+      }
+    </style>
+    <div class="header-title">
+      <h1
+        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-red-400 uppercase md:text-5xl lg:text-6xl dark:text-white"
+      >
+        I love you so much love
+      </h1>
+    </div>
+    <div class="header">
+      <div class="header-content">
+        <img src="./image/yes.gif" alt="" />
+      </div>
+      <div class="header-content">
+        <img src="./image/yes2.gif" alt="" />
+      </div>
+      <div class="header-content">
+        <img src="./image/yes.gif" alt="" />
+      </div>
+      
+    </div>
+
+    <!-- drawer init and toggle -->
+    <div class="text-center">
+      <button
+        class="overflow-y-auto text-white bg-red-400 hover:bg-red-400 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        type="button"
+        data-drawer-target="drawer-top-example"
+        data-drawer-show="drawer-top-example"
+        data-drawer-placement="top"
+        aria-controls="drawer-top-example"
+      >
+       Click the button
+      </button>
+    </div>
+
+    <!-- drawer component -->
+    <div
+      id="drawer-top-example"
+      class="fixed top-0 left-0 right-0 z-40 w-full p-4 transition-transform -translate-y-full bg-white dark:bg-gray-800 h-full overflow-y-auto
+      tabindex="-1"
+      aria-labelledby="drawer-top-label"
+    >
+      <h5
+        id="drawer-top-label"
+        class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"
+      >
+        Sorry my Love
+      </h5>
+      <button
+        type="button"
+        data-drawer-hide="drawer-top-example"
+        aria-controls="drawer-top-example"
+        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
+      >
+        <svg
+          class="w-3 h-3"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+          />
+        </svg>
+        <span class="sr-only">Close menu</span>
+      </button>
+      <div class="drawer-body">
+        <div class="drawer-content">
+          <h1
+            class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-red-400 uppercase md:text-5xl lg:text-6xl dark:text-white"
+          >
+            I love you so much love
+          </h1>
+          <p class="max-w-lg mt-6 text-sm text-gray-500 dark:text-gray-400">
+            I want you to understand that my purpose was never to make you feel
+            insecure or less beautiful in any way. When I stated those words, I
+            was attempting to express how stunningly lovely I find you on a
+            daily basis, not just on days when you feel it. You are undeniably
+            the most beautiful person I know.
+          </p>
+          <p class="max-w-lg mt-6 text-sm text-gray-500 dark:text-gray-400">
+            I see now that my words did not convey that effectively, and I
+            apologize for causing you any grief. You mean everything to me, and
+            the last thing I ever want to do is hurt you. You are more than
+            simply my girlfriend you are my best friend, confidant, and source
+            of joy.
+          </p>
+          <p class="max-w-lg mt-6 text-sm text-gray-500 dark:text-gray-400">
+            Please excuse my terrible choice of words. I promise to do better,
+            to always pull you up and let you understand how special you are to
+            me. I love you more than words can express, and I hope you will find
+            it in your heart to forgive me.
+          </p>
+        </div>
+      </div>
+      <section>
+        <div class="carousel">
+            <div class="text">
+                <h1
+                class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-red-400 uppercase md:text-5xl lg:text-6xl dark:text-white">
+               So Pretty kaya sa akong uyab
+              </h1>
+              <img src="./image/pretty.gif" alt="">
+
+            </div>
+          <div class="carousel-slide">
+            <img src="./image/love.jpg" alt="Image 1" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./image/love2.jpg" alt="Image 2" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./image/love3.jpg" alt="Image 3" />
+          </div> 
+          <div class="carousel-slide">
+            <img src="./image/love4.jpg" alt="Image 3" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./image/love5.jpg" alt="Image 3" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./image/love6.jpg" alt="Image 3" />
+          </div>
+
+          <div class="carousel-slide">
+            <img src="./image/love7.jpg" alt="Image 3" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./image/love8.jpg" alt="Image 3" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./image/love9.jpg" alt="Image 3" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./image/love10.jpg" alt="Image 3" />
+          </div>
+          <div class="carousel-slide">
+            <img src="./image/love11.jpg" alt="Image 3" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".carousel-slide");
+        let currentSlide = 0;
+
+        // Show the first slide initially
+        slides[currentSlide].classList.add("active");
+
+        // Function to move to the next slide
+        function nextSlide() {
+          slides[currentSlide].classList.remove("active");
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].classList.add("active");
+        }
+
+        // Automatically move to the next slide every 2 seconds
+        setInterval(nextSlide, 2000);
+      });
+    </script>
+  </body>
+</html>

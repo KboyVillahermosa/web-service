@@ -2,40 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet" href="style.css">
-    <title>EXERCISE</title>
+    <title>Sorry Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+        h1 {
+            color: #343a40;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .yes-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .no-button {
+            background-color: #dc3545;
+            color: white;
+        }
+        .image-container img {
+            position: absolute;
+            max-width: 200px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #17a2b8;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="navbar">
-        <div class="logo"><a href="#"><i class="fa-sharp fa-solid fa-watch-fitness"></i><span>Fitness</span></a></div>
-        <ul class="links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#home" class="active">Sign In</a></li>
-        <li><a href="#home" class="active">Creat Accountssssssssssssssssss</a></li>
-      </ul>
-      <a href="" class="action_btn">Get started</a>
-      <div class="toggle_btn">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      </div>
-      <div class="content">
-        <h1 class="heading1">START YOUR <span>EXERCISE </span>TODAY</h1>
-        <p class="para">Stop doubting yourself you're capable. Be consistent and always keep going.</p>
-        <button class="bt1"><a href="work.html">START EXERCISE</a></button> 
-        <button class="bt2">Learn More</button>
-      </div>
-     <div class="dropdown_menu">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#home" class="active">Sign In</a></li>
-        <li><a href="#home" class="active">Creat Account</a></li>
-        <li><a href="#" class="action_btn">Get started</a></li>
-     </div>
-    </header>
-    
-<script src="java.js"></script>
+    <h1>Will you forgive me?</h1>
+    <div>
+        <button class="yes-button" onclick="showMessage()">Yes</button>
+        <button class="no-button" onclick="showImage()">No</button>
+    </div>
+    <div class="image-container" id="imageContainer"></div>
+    <div class="message" id="message"></div>
+
+    <script>
+        const images = [
+            './image/sorry4.gif',
+            './image/sorry.gif',
+            './image/sorry2.gif',
+            './image/sorry3.gif',
+            './image/sorry.gif',
+            './image/sorry2.gif',
+            './image/sorry5.jpg',
+            './image/sorry4.gif',
+			'./image/sorry6.gif'
+        ];
+        let currentImageIndex = 0;
+        const usedPositions = new Set();
+
+        function getRandomPosition() {
+            const positions = [
+                'top: 10px; left: 10px;',
+                'top: 10px; right: 10px;',
+                'bottom: 10px; left: 10px;',
+                'bottom: 10px; right: 10px;',
+                'bottom: 5px; right: 5px;',
+                'bottom: 5px; left: 5px;',
+                'top: 15px; left: 9px;',
+                'top: 20px; right: 8px;',
+                `top: ${Math.floor(Math.random() * 80)}%; left: ${Math.floor(Math.random() * 80)}%;`
+            ];
+
+            let position;
+            do {
+                position = positions[Math.floor(Math.random() * positions.length)];
+            } while (usedPositions.has(position) && usedPositions.size < positions.length);
+
+            usedPositions.add(position);
+            return position;
+        }
+
+        function showImage() {
+            const imageContainer = document.getElementById('imageContainer');
+            if (currentImageIndex < images.length) {
+                const img = document.createElement('img');
+                img.src = images[currentImageIndex];
+                img.style.cssText = getRandomPosition();
+                imageContainer.appendChild(img);
+                currentImageIndex++;
+            } else {
+                const message = document.createElement('p');
+                message.innerText = 'Sorry na love e click ang yes please';
+                imageContainer.appendChild(message);
+            }
+        }
+
+       
+        
+    </script>
 </body>
 </html>
